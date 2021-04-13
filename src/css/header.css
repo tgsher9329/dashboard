@@ -1,0 +1,15 @@
+.header {
+    background-color: black;
+}
+
+.linkTextPrimary {
+    color: rgb(203, 246, 79);
+}
+
+.linkTextPrimary :hover {
+    color: rgb(203, 246, 79);
+}
+
+.homeLink {
+    font-size: x-large;
+}
