@@ -16,7 +16,6 @@ export default function Dashboard() {
                     <Instagram />
                     <Youtube />
                 </Row>
-
             </Container>
         </div>
     )

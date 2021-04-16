@@ -46,7 +46,7 @@ export default function Sales() {
                 {/* card 2 */}
                 <Col sm={12} md={6} xl={4} className="my-2">
                     <div className="card bg-dark">
-                        <h6 className="mb-4 textPrimary">Monthly Sales</h6>
+                        <h6 className="mb-3 textPrimary">Monthly Sales</h6>
                         <div className="textSecondary row d-flex align-items-center">
                             <div className="col-8">
                                 <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ monthlySalesData.monthly.current > monthlySalesData.monthly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${monthlySalesData.monthly.current}</h3>

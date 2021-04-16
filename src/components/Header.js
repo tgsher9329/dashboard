@@ -5,17 +5,17 @@ import '../css/header.css'
 
 export default function Header() {
     return (
-        <div className="header">
+        <div className="header mb-2">
             <Container>
                 <Row>
                     <Col>
-                        <div className="d-flex justify-content-between">
+                        <div className="d-flex justify-content-between align-items-center">
                             
                             <Nav.Item className="mt-4 mr-5 d-inline-flex">
                                 <Link className="headerLink linkTextPrimary homeLink" to="/">Arms Reach</Link>
                             </Nav.Item>
 
-                            <div className="mt-4 ml-5 d-inline-flex " >
+                            <div className="d-inline-flex" >
                                 <Nav.Item>
                                     <Link to="/instagramDetail" className="ml-3 headerLink linkTextPrimary">Instagram Details</Link>
                                 </Nav.Item>

@@ -1,13 +1,18 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Button, Col, Modal } from "react-bootstrap";
 import useData from "../util/dataService";
 
 export default function YoutubeDetail() {
     const [modalShow, setModalShow] = React.useState(false);
     const dataService = useData()
-    const instagramDetails = dataService.getMediaData()
-    const pictures = instagramDetails.videos
+    const [data, setData] = useState(useData())
+    const [modalData, setModalData] = useState(null)
     
+    
+    useEffect(() => {
+        setData(dataService.getMediaData())
+    }, [dataService])
 
     function MyVerticallyCenteredModal(props) {
         return (
@@ -19,13 +24,13 @@ export default function YoutubeDetail() {
             >
             <Modal.Header className="mx-auto" closeButton>
                 <Modal.Title id="contained-modal-title-center">
-                {props.details.title}
+                {props.details?.title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Views: {props.details.views}</h4>
+                <h4>Views: {props.details?.views}</h4>
                 <p>
-                {props.details.description}
+                {props.details?.description}
                 </p>
             </Modal.Body>
             <Modal.Footer>
@@ -35,24 +40,28 @@ export default function YoutubeDetail() {
         );
     }
 
+    const instagramDetails = data
+    const pictures = instagramDetails?.videos || []
+
 return (
     <div>
         {
             pictures.map((picture, index) => {
                 return (
                         <Col sm={12} md={6} xl={4} className="mx-auto my-2"key={index}>
-                            <Button variant="primary" onClick={() => setModalShow(true)}>
+                            <Button variant="primary" onClick={() => {setModalShow(true); setModalData(picture)}}>
                                 {picture.title}
                             </Button>
-                            <MyVerticallyCenteredModal
-                                show={modalShow}
-                                onHide={() => setModalShow(false)}
-                                details={picture}
-                            />
                         </Col>
             )
             })
         }
+
+        <MyVerticallyCenteredModal
+                                show={modalShow}
+                                onHide={() => setModalShow(false)}
+                                details={modalData}
+                            />
     </div>
     )
 }

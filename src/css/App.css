@@ -2,6 +2,7 @@
   text-align: center;
 }
 
-body {
-  background-color: rgb(20, 20, 20) !important;
+.footer {
+  background-color: black;
+  padding: 15px;
 }
