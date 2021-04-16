@@ -48,7 +48,7 @@ return (
         {
             pictures.map((picture, index) => {
                 return (
-                        <Col sm={12} md={6} xl={4} className="mx-auto my-2"key={index}>
+                        <Col sm={12} md={6} xl={4} className="mx-auto mt-2"key={index}>
                             <Button variant="primary" onClick={() => {setModalShow(true); setModalData(picture)}}>
                                 {picture.title}
                             </Button>
