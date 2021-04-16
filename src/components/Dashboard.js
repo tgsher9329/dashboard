@@ -1,17 +1,23 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
 import Events from './Events'
 import Instagram from './Instagram'
 import Sales from './Sales'
 import Youtube from './Youtube'
+import '../css/dashboard.css'
+import { Container, Row } from 'react-bootstrap'
 
 export default function Dashboard() {
     return (
-        <Row>
+        <div>
             <Sales />
             <Events />
-            <Instagram />
-            <Youtube />
-        </Row>
+            <Container fluid>
+                <Row>
+                    <Instagram />
+                    <Youtube />
+                </Row>
+
+            </Container>
+        </div>
     )
 }

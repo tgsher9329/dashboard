@@ -1,8 +1,9 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import useData from '../util/dataService'
+import '../css/sales.css'
 
 export default function Sales() {
     const dataService = useData()
@@ -15,70 +16,72 @@ export default function Sales() {
 
     return (
 
-        <Row className="d-flex justify-content-around col-12 mt-3">
-            {/* card 1 */}
-            <div className="m-1 col-11 col-md-5 col-xl-3 ">
-                <div className="card">
-                    <h6 className="mb-4">Daily Sales</h6>
-                    <div className="row d-flex align-items-center">
-                        <div className="col-9">
-                            <h3 className="d-flex align-items-center"> { dailySalesData.daily.current > dailySalesData.daily.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}
-                            Current: ${dailySalesData.daily.current}</h3>
-                        </div>
-                        <div className="col-3 text-right">
-                            <p>{dailyPercent}% of {dailySalesData.daily.goal} goal</p>
-                        </div>
-                    </div>
-                    <div className="progress m-t-30">
-                        <div className="progress-bar progress-c-theme" style={{width: `${dailyPercent}%`}} role="progressbar" aria-valuenow={dailySalesData.daily.current} aria-valuemin="0" aria-valuemax={dailySalesData.daily.goal}>
-                            {/* progress bar to show difference from yesterday, 0 being no sells, 100% being the sells from yesterday */}
-                        </div>
-                    </div>
+        // <Row className="d-flex justify-content-around col-12 mt-3 ">
+        <Container fluid>
+            <Row>
 
-                </div>
-            </div>
-
-            {/* card 2 */}
-            <div className="m-1 col-11 col-md-5 col-xl-3">
-                <div className="card">
-                    <h6 className="mb-4">Monthly Sales</h6>
-                    <div className="row d-flex align-items-center">
-                        <div className="col-8">
-                            <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ monthlySalesData.monthly.current > monthlySalesData.monthly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${monthlySalesData.monthly.current}</h3>
+                {/* card 1 */}
+                <Col sm={12} md={6} xl={4} className="mb-2">
+                    <div className="card bg-dark">
+                        <h6 className="mb-4 textPrimary">Daily Sales</h6>
+                        <div className="row d-flex align-items-center ">
+                            <div className="col-8 ">
+                                <h3 className="d-flex align-items-center textSecondary "> { dailySalesData.daily.current > dailySalesData.daily.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}
+                                Current: ${dailySalesData.daily.current}</h3>
+                            </div>
+                            <div className="col-3 text-right textSecondary percentDiv ">
+                                {dailyPercent}% of {dailySalesData.daily.goal} goal
+                            </div>
                         </div>
-                        <div className="col-4 text-right">
-                            <p>{monthlyPercent}% of {monthlySalesData.monthly.goal} goal</p>
-                        </div>
-                    </div>
-                    <div className="progress m-t-30">
-                        <div className="progress-bar progress-c-theme" style={{width: `${monthlyPercent}%`}} role="progressbar" aria-valuenow={monthlySalesData.monthly.current} aria-valuemin="0" aria-valuemax={monthlySalesData.monthly.goal}>
-                            {/* progress bar to show difference from last month, 0 being no sells, 100% being the sells from last month */}
+                        <div className="progress">
+                            <div className="progress-bar" style={{width: `${dailyPercent}%`}} role="progressbar" aria-valuenow={dailySalesData.daily.current} aria-valuemin="0" aria-valuemax={dailySalesData.daily.goal}>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </Col>
 
 
-            {/* yearly sales */}
-            <div className="m-1 col-11 col-md-11 col-xl-3">
-                <div className="card">
-                    <h6 className="mb-4">Yearly Sales</h6>
-                    <div className="row d-flex align-items-center">
-                        <div className="col-8">
-                            <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ yearlySalesData.yearly.current > yearlySalesData.yearly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${yearlySalesData.yearly.current}</h3>
+                {/* card 2 */}
+                <Col sm={12} md={6} xl={4} className="mb-2">
+                    <div className="card bg-dark">
+                        <h6 className="mb-4 textPrimary">Monthly Sales</h6>
+                        <div className="textSecondary row d-flex align-items-center">
+                            <div className="col-8">
+                                <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ monthlySalesData.monthly.current > monthlySalesData.monthly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${monthlySalesData.monthly.current}</h3>
+                            </div>
+                            <div className="col-4 text-right">
+                                <p>{monthlyPercent}% of {monthlySalesData.monthly.goal} goal</p>
+                            </div>
                         </div>
-                        <div className="col-4 text-right">
-                            <p>{yearlyPercent}% of {yearlySalesData.yearly.goal} goal</p>
+                        <div className="progress">
+                            <div className="progress-bar" style={{width: `${monthlyPercent}%`}} role="progressbar" aria-valuenow={monthlySalesData.monthly.current} aria-valuemin="0" aria-valuemax={monthlySalesData.monthly.goal}>
+                            </div>
                         </div>
                     </div>
-                    <div className="progress m-t-30">
-                        <div className="progress-bar progress-c-theme" style={{width: `${yearlyPercent}%`}} role="progressbar" aria-valuenow={yearlySalesData.yearly.current} aria-valuemin="0" aria-valuemax={yearlySalesData.yearly.goal}>
-                            {/* progress bar to show difference from last month, 0 being no sells, 100% being the sells from last month */}
+                </Col>
+
+
+                {/* yearly sales */}
+                <Col sm={12} xl={4} className="mb-2">
+                    <div className="card bg-dark">
+                        <h6 className="mb-4 textPrimary">Yearly Sales</h6>
+                        <div className="row d-flex align-items-center">
+                            <div className="col-8 textSecondary">
+                                <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ yearlySalesData.yearly.current > yearlySalesData.yearly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${yearlySalesData.yearly.current}</h3>
+                            </div>
+                            <div className="col-4 text-right textSecondary">
+                                <p>{yearlyPercent}% of {yearlySalesData.yearly.goal} goal</p>
+                            </div>
+                        </div>
+                        <div className="progress">
+                            <div className="progress-bar" style={{width: `${yearlyPercent}%`}} role="progressbar" aria-valuenow={yearlySalesData.yearly.current} aria-valuemin="0" aria-valuemax={yearlySalesData.yearly.goal}>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </Row>
+                </Col>
+
+            </Row>
+        </Container>
 
     )
 }

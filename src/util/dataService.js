@@ -1,6 +1,8 @@
 import faker from 'faker'
 
 class DataService {
+
+videoTitles = ["title", "title2", "title 3"]
     
     getSalesData() {
         return {
@@ -60,11 +62,30 @@ class DataService {
                     current: faker.datatype.number({min: 0, max: 35000}),
                     past: faker.datatype.number({min: 0, max: 35000}),
                 }
-            }
+            },
+            videos: [
+                getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), getVideo(), 
+            ],
+
+            // youtubeDetail : {
+            //     index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            //     videoTitles : [faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName(), faker.commerce.productName()],
+            //     description: [faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(), faker.commerce.productDescription(),],
+            //     views: [faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}), faker.datatype.number({min: 0, max: 500000}),],
+            // }
         }
     }
 
 }
+
+function getVideo(){
+    return {
+        title: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        views: faker.datatype.number({min: 0, max: 500000}),
+    }
+}
+
 const dataService = new DataService()
 export default function useData() {
     return dataService

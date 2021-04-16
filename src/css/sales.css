@@ -1,0 +1,20 @@
+.textPrimary {
+    color: rgb(200, 255, 80);
+}
+.salesCard{
+    background-color: rgb(20,20,20);
+}
+
+.textSecondary {
+    color: rgb(200, 200, 200);
+}
+
+.percentDiv {
+    /* margin-right: 10px; */
+    padding: 0;
+}
+
+.noPadding {
+    padding: 0;
+    margin: 0;
+}
