@@ -1,5 +1,5 @@
 .header {
-    background-color: rgb(0, 255, 85);
+    background-color: rgb(0, 255, 85) !important;
 }
 
 .linkTextPrimary {

@@ -15,7 +15,7 @@ export default function Events() {
         // <Row className="d-flex justify-content-around text-center col noPadding">
         <Container fluid>
             <Row>
-                <Col sm={12}>
+                <Col sm={12} className="m-2">
                     <div className="card bg-dark">
                         <div className="card-body">
                             <div className="row align-items-center justify-content-center">
@@ -34,7 +34,5 @@ export default function Events() {
 
             </Row>
         </Container>
-            
-        // </Row>
     )
 }

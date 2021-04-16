@@ -15,7 +15,7 @@ export default function Youtube() {
     const perVideoPercent = Math.round((perVideoData.current/perVideoData.goal)*100)
 
     return (
-        <Col sm={12} xl={6}>
+        <Col sm={12} xl={6} className="m-2">
             <div className="card col-12 col-xl-6 bg-dark">
                 <div className="border-bottom card-body">
                     <div className="row align-items-center justify-content-center">

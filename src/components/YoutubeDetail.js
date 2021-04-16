@@ -1,5 +1,5 @@
+import React from "react";
 import { Button, Col, Modal } from "react-bootstrap";
-import React, { useState }  from "react";
 import useData from "../util/dataService";
 
 export default function YoutubeDetail() {
@@ -17,15 +17,15 @@ export default function YoutubeDetail() {
             aria-labelledby="contained-modal-title-vcenter"
             centered
             >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                {props.video.title}
+            <Modal.Header className="mx-auto" closeButton>
+                <Modal.Title id="contained-modal-title-center">
+                {props.details.title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>views</h4>
+                <h4>Views: {props.details.views}</h4>
                 <p>
-                description
+                {props.details.description}
                 </p>
             </Modal.Body>
             <Modal.Footer>
@@ -40,7 +40,7 @@ return (
         {
             videos.map((video, index) => {
                 return (
-                        <Col sm={12} md={6} xl={4} key={index}>
+                        <Col sm={12} md={6} xl={4} className="mx-auto my-2"key={index}>
                             <Button variant="primary" onClick={() => setModalShow(true)}>
                                 {video.title}
                             </Button>

@@ -16,7 +16,7 @@ export default function Instagram() {
     const perPostPercent = Math.round((perPostData.current/perPostData.goal)*100)
 
     return (
-        <Col sm={12} xl={6}>
+        <Col sm={12} xl={6} className="m-2">
             <div className="card bg-dark col-12 col-xl-6">
                 <div className="border-bottom card-body">
                     <div className="row align-items-center justify-content-center">
