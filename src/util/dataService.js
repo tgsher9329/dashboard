@@ -1,8 +1,6 @@
 import faker from 'faker'
 
 class DataService {
-
-videoTitles = ["title", "title2", "title 3"]
     
     getSalesData() {
         return {
