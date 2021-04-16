@@ -21,8 +21,8 @@ export default function Sales() {
             <Row>
 
                 {/* card 1 */}
-                <Col sm={12} md={6} xl={4} className="mb-2">
-                    <div className="card bg-dark">
+                <Col sm={12} md={6} xl={4} className="my-2">
+                    <div className="card bg-dark ">
                         <h6 className="mb-4 textPrimary">Daily Sales</h6>
                         <div className="row d-flex align-items-center ">
                             <div className="col-8 ">
@@ -30,7 +30,9 @@ export default function Sales() {
                                 Current: ${dailySalesData.daily.current}</h3>
                             </div>
                             <div className="col-3 text-right textSecondary percentDiv ">
-                                {dailyPercent}% of {dailySalesData.daily.goal} goal
+                                <p className="mb-0">
+                                    {dailyPercent}% of {dailySalesData.daily.goal} goal
+                                </p>
                             </div>
                         </div>
                         <div className="progress">
@@ -42,15 +44,17 @@ export default function Sales() {
 
 
                 {/* card 2 */}
-                <Col sm={12} md={6} xl={4} className="mb-2">
+                <Col sm={12} md={6} xl={4} className="my-2">
                     <div className="card bg-dark">
                         <h6 className="mb-4 textPrimary">Monthly Sales</h6>
                         <div className="textSecondary row d-flex align-items-center">
                             <div className="col-8">
                                 <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ monthlySalesData.monthly.current > monthlySalesData.monthly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${monthlySalesData.monthly.current}</h3>
                             </div>
-                            <div className="col-4 text-right">
-                                <p>{monthlyPercent}% of {monthlySalesData.monthly.goal} goal</p>
+                            <div className="col-4 text-right mb-0 percentDiv">
+                                <p className="mb-0">
+                                    {monthlyPercent}% of {monthlySalesData.monthly.goal} goal
+                                </p>
                             </div>
                         </div>
                         <div className="progress">
@@ -62,15 +66,17 @@ export default function Sales() {
 
 
                 {/* yearly sales */}
-                <Col sm={12} xl={4} className="mb-2">
+                <Col sm={12} xl={4} className="my-2">
                     <div className="card bg-dark">
                         <h6 className="mb-4 textPrimary">Yearly Sales</h6>
                         <div className="row d-flex align-items-center">
                             <div className="col-8 textSecondary">
                                 <h3 className="d-flex align-items-center"><i className=" icon-arrow-up-if-higher-than-previous-matrix" />{ yearlySalesData.yearly.current > yearlySalesData.yearly.goal ? (<FontAwesomeIcon style={{color: "rgb(0, 255, 0)"}} icon={faArrowUp} />) : (<FontAwesomeIcon style={{color: "rgb(255, 0, 0)"}} icon={ faArrowDown} />)}Current: ${yearlySalesData.yearly.current}</h3>
                             </div>
-                            <div className="col-4 text-right textSecondary">
-                                <p>{yearlyPercent}% of {yearlySalesData.yearly.goal} goal</p>
+                            <div className="col-4 text-right textSecondary mb-0">
+                            <p className="mb-0">
+                                    {yearlyPercent}% of {yearlySalesData.yearly.goal} goal
+                                </p>
                             </div>
                         </div>
                         <div className="progress">
