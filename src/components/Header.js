@@ -11,7 +11,7 @@ export default function Header() {
                     <Col>
                         <div className="d-flex justify-content-between align-items-center">
                             
-                            <Nav.Item className="mt-4 mr-5 d-inline-flex">
+                            <Nav.Item>
                                 <Link className="headerLink linkTextPrimary homeLink" to="/">Arms Reach</Link>
                             </Nav.Item>
 
