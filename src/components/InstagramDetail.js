@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button, Col, Modal } from "react-bootstrap";
 import useData from "../util/dataService";
+import "../css/details.css"
 
 export default function YoutubeDetail() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -44,7 +45,8 @@ export default function YoutubeDetail() {
     const pictures = instagramDetails?.videos || []
 
 return (
-    <div>
+    <div className="pb-2">
+        <h3 className="mb-2 textPrimary detailsHeader">Click on an Instagram post to see more details.</h3>
         {
             pictures.map((picture, index) => {
                 return (

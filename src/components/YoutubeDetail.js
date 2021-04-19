@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Modal } from "react-bootstrap";
 import useData from "../util/dataService";
+import "../css/details.css"
 
 export default function YoutubeDetail() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -36,7 +37,8 @@ export default function YoutubeDetail() {
     }
 
 return (
-    <div>
+    <div className="pb-2">
+        <h3 className="mb-2 textPrimary detailsHeader">Click on a YouTube video to see more details.</h3>
         {
             videos.map((video, index) => {
                 return (

@@ -5,7 +5,7 @@ import '../css/header.css'
 
 export default function Header() {
     return (
-        <div className="header mb-2">
+        <div className="header">
             <Container>
                 <Row>
                     <Col>
